@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  ecosystem:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./build/ecosystem
+    volumes:
+      - .:/app
+    depends_on:
+      - vcpkg
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./build/test_all
+    volumes:
+      - .:/app
+    depends_on:
+      - vcpkg
+
+  vcpkg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: /bin/true

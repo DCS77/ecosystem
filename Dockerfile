@@ -39,7 +39,3 @@ COPY . .
 # Set up build directory
 RUN cmake -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 RUN cmake --build build
-
-# Command to run tests
-CMD [ "./build/ecosystem" ]
-CMD [ "./build/test_all" ]
