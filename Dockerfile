@@ -37,5 +37,7 @@ RUN ${VCPKG_ROOT}/vcpkg install gtest --triplet arm64-linux
 COPY . .
 
 # Set up build directory
-RUN cmake -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+RUN cmake --preset=default
 RUN cmake --build build
+
+EXPOSE 18080

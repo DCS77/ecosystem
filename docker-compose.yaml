@@ -10,6 +10,16 @@ services:
     depends_on:
       - vcpkg
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./build/api
+    volumes:
+      - .:/app
+    depends_on:
+      - vcpkg
+
   test:
     build:
       context: .

@@ -13,17 +13,13 @@ git clone <repo-url>
 cd project
 ```
 
-1. Copy vcpkg into the project directory from your local machine.
+2. Copy vcpkg into the project directory from your local machine.
 
-2. Build and run the project using Docker
-
-```bash
-docker build -t ecosystem .
-docker run --rm ecosystem
-```
-
-1. Run tests
+3. Build and run the project using Docker
 
 ```bash
-docker run --rm ecosystem
+docker-compose build ecosystem
+docker-compose run ecosystem
+docker-compose run api
+docker-compose run test
 ```
