@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     tar \
-    qemu-user-static \
     libc6 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -34,10 +33,13 @@ RUN ${VCPKG_ROOT}/bootstrap-vcpkg.sh -disableMetrics
 RUN ${VCPKG_ROOT}/vcpkg install gtest --triplet arm64-linux
 
 # Copy project files
-COPY . .
+COPY backend ./backend
+COPY CMakeLists.txt .
+COPY CMakePresets.json .
+COPY vcpkg.json .
 
 # Set up build directory
-RUN cmake --preset=default
+RUN cmake --preset=default -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja
 RUN cmake --build build
 
 EXPOSE 18080

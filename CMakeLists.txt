@@ -3,18 +3,18 @@ project(ecosystem LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_MAKE_PROGRAM "/usr/bin/ninja")
+set(CMAKE_TOOLCHAIN_FILE "/opt/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
-set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
-
-add_executable(ecosystem src/main.cpp)
-add_executable(test_all src/test.cpp)
-add_executable(api src/backend/api/main.cpp)
-
-find_package(GTest REQUIRED)
+# API
+add_executable(api backend/api/main.cpp)
 find_package(Crow REQUIRED)
-
 target_link_libraries(api PUBLIC Crow::Crow)
-target_link_libraries(test_all PRIVATE GTest::gtest_main)
+
+# Test API
+add_executable(test_api backend/api/test.cpp)
+find_package(GTest REQUIRED)
+target_link_libraries(test_api PRIVATE GTest::gtest_main)
 
 enable_testing()
-add_test(NAME test_all COMMAND test_all)
+add_test(NAME test_api COMMAND test_api)
