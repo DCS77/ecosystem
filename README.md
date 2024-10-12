@@ -2,11 +2,13 @@
 
 _Infrastructure for an ecosystem of plugins set up using C++23, vcpkg, gtest, and Docker._
 
-## Requirements
+## Backend
+
+### Requirements
 
 - Docker
 
-## Building and Running
+### Building and Running
 
 1. Clone the project
 
@@ -29,8 +31,31 @@ _Infrastructure for an ecosystem of plugins set up using C++23, vcpkg, gtest, an
    docker-compose run -p 18080:18080 api
    ```
 
+## Frontend
+
+### Building and Running
+
+1. Go to the frontend project folder.
+
+```bash
+cd frontend
+```
+
+2. Set the Node.js version to 20 or greater.
+
+```bash
+nvm use 20
+```
+
+3. Install and run
+
+```bash
+npm install
+npm run dev
+```
+
 ## Future Work
 
-- Frontend application which interacts with backend through API.
+- Allow frontend to interact with backend through API.
 - Interfaces for UI plugins (frontend) and logic plugins (backend).
 - Specific implementations of these plugins to handle a task.
