@@ -11,7 +11,7 @@ _Infrastructure for an ecosystem of plugins set up using C++23, vcpkg, gtest, an
 1. Clone the project
 
    ```bash
-   git clone <repo-url>
+   git clone git@github.com:DCS77/ecosystem.git
    cd ecosystem
    ```
 
