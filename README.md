@@ -1,6 +1,6 @@
 # Plugin Ecosystem
 
-_Infrastructure for an ecosystem of plugins set up using C++23, vcpkg, gtest, and Docker._
+_Infrastructure for an ecosystem of plugins built using C++23, vcpkg, gtest and Docker for the backend, as well as React with TypeScript and Vite for the frontend._
 
 ## Backend
 

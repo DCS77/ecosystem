@@ -1,5 +1,5 @@
 {
   "name": "ecosystem",
   "version-string": "1.0.0",
-  "dependencies": ["gtest", "crow"]
+  "dependencies": ["crow", "gtest"]
 }

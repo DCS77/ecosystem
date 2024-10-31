@@ -27,16 +27,16 @@ WORKDIR /app
 
 # Copy vcpkg from local directory into Docker
 COPY vcpkg /opt/vcpkg
+COPY vcpkg.json .
 
 # Bootstrap vcpkg and install dependencies
 RUN ${VCPKG_ROOT}/bootstrap-vcpkg.sh -disableMetrics
-RUN ${VCPKG_ROOT}/vcpkg install gtest --triplet arm64-linux
+RUN ${VCPKG_ROOT}/vcpkg install --triplet arm64-linux
 
 # Copy project files
-COPY backend ./backend
+ADD backend ./backend
 COPY CMakeLists.txt .
 COPY CMakePresets.json .
-COPY vcpkg.json .
 
 # Set up build directory
 RUN cmake --preset=default -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja

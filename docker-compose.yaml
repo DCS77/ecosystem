@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: ./build/api
-    volumes:
-      - build_data:/app/build
     depends_on:
       - vcpkg
 
@@ -15,8 +13,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: ./build/test_api
-    volumes:
-      - build_data:/app/build
     depends_on:
       - vcpkg
 
