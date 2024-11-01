@@ -38,11 +38,13 @@ function Widget(props: PropsWithChildren<WidgetProps>) {
     >
       <ResizableBox className="widget box" width={props.defaultWidth} height={props.defaultHeight} draggableOpts={{ grid: [25, 25] }} axis='both'
         minConstraints={[props.minWidth, props.minHeight]} maxConstraints={[props.maxWidth, props.maxHeight]}>
-        <div className="handle"></div>
-        <span className="title">{props.title}</span>
-        <div>
-          {props.children}
-        </div>
+        <>
+          <div className="handle"></div>
+          <span className="title">{props.title}</span>
+          <div>
+            {props.children}
+          </div>
+        </>
       </ResizableBox>
     </Draggable>
   )

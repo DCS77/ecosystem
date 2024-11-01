@@ -1,3 +1,5 @@
-export function isConnected() {
-  return true;
+import { get } from "./backend";
+
+export async function getState() {
+  return await get<{ online: boolean }>("state");
 }
