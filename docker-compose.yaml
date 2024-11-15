@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ./build/api
+    working_dir: /app/build
+    command: ./api
     depends_on:
       - vcpkg
 
@@ -12,7 +13,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ./build/test_api
+    working_dir: /app/build
+    command: ./test_api
+    depends_on:
+      - vcpkg
+
+  bash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/build
+    command: /bin/sh
     depends_on:
       - vcpkg
 
