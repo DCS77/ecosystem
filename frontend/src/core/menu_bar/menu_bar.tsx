@@ -1,7 +1,7 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren } from 'react';
 import copy from 'copy-to-clipboard';
 
-import './menuBar.css';
+import './menu_bar.css';
 
 const copyVersion = (version: string) => {
   copy('Ecosystem UI v' + version);

@@ -1,5 +1,5 @@
-import Widget from "../widget";
-import { getState } from "../../lib/link";
+import Widget from "../widget/widget";
+import { getConnectionState } from "./backend";
 import { useEffect, useState } from "react";
 
 import './connection.css';
@@ -8,7 +8,7 @@ function Connection() {
   const [isConnected, setConnected] = useState(false);
 
   const updateState = async () => {
-    getState().then(state => {
+    getConnectionState().then(state => {
       setConnected(!!state.online);
     }).catch(error => {
       console.error("getStatus", { error });

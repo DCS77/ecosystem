@@ -1,12 +1,14 @@
-import Connection from './plugins/connection/connection';
 import GridLayout from "react-grid-layout";
-import MenuBar from './components/menuBar';
+import MenuBar from './core/menu_bar/menu_bar';
+import Connection from './core/connection/connection';
+import MarketData from './plugins/market_data/market_data';
 
 import './App.css';
 
 function App() {
   const layout = [
-    { i: "connection", x: 0, y: 0, w: 2.5, h: 2.5, minW: 2.5, maxW: 2.5, minH: 2.5, maxH: 2.5, isResizable: false },
+    { i: "connection", x: 0, y: 0, w: 10, h: 3, minW: 10, maxW: 10, minH: 3, maxH: 3, isResizable: false },
+    { i: "market-data", x: 0, y: 0, w: 10, h: 10, minW: 10, maxW: 20, minH: 10, maxH: 30, isResizable: true },
   ];
 
   return (
@@ -15,14 +17,13 @@ function App() {
       <GridLayout
         className="layout"
         layout={layout}
-        cols={12}
-        rowHeight={30}
+        cols={50}
+        rowHeight={10}
         width={1200}
         draggableHandle=".handle"
       >
-        <div key="connection">
-          <Connection />
-        </div>
+        <div key="connection"><Connection /></div>
+        <div key="market-data"><MarketData /></div>
       </GridLayout>
     </>
   )
