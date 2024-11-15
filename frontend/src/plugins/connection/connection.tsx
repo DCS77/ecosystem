@@ -1,8 +1,8 @@
 import Widget from "../widget";
 import { getState } from "../../lib/link";
+import { useEffect, useState } from "react";
 
 import './connection.css';
-import { useEffect, useState } from "react";
 
 function Connection() {
   const [isConnected, setConnected] = useState(false);
@@ -25,7 +25,7 @@ function Connection() {
   }, [])
 
   return (
-    <Widget title={"Connection Status"} defaultWidth={225} defaultHeight={100} minWidth={225} minHeight={100} maxWidth={225} maxHeight={200}>
+    <Widget title="Connection Status">
       {isConnected ? (
         <div className="online">Online</div>
       ) : (

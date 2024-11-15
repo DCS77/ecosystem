@@ -1,0 +1,46 @@
+.bar {
+  background: #fff;
+  color: #000;
+  user-select: none;
+  text-align: left;
+
+  width: 100%;
+  padding-top: 60px;
+}
+
+.menu-text {
+  padding: 4px;
+}
+
+.menu-button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+}
+
+.menu-button:hover {
+  background: #eee;
+  color: #000;
+}
+
+.menu-button:active {
+  background: #ddd;
+  color: #000;
+}
+
+.version-button {
+  padding: 4px;
+  --displayClipboard: none;
+}
+
+.version-button:focus {
+  --displayClipboard: inline-block;
+}
+
+.version-button > .version-clipboard {
+  color: #070070;
+  padding-left: 4px;
+  display: var(--displayClipboard);
+}
