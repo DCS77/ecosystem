@@ -22,5 +22,6 @@
 }
 
 .plugin {
+  overflow: scroll;
   border: #fff solid 2px;
 }

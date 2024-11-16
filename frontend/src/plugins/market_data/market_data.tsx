@@ -1,27 +1,22 @@
 import Widget from "../../core/widget/widget";
 import { getInfo } from "./backend";
+import { DEFAULT_INFO } from "../../core/info/info";
 import { useEffect, useState } from "react";
 
 import './market_data.css';
 
+const NAME: string = "MD";
+const VERSION: string = "0.1";
+
 function MarketData() {
-  const [info, setInfo] = useState({
-    name: "",
-    version: "",
-    uptime: 0,
-  });
+  const [info, setInfo] = useState(DEFAULT_INFO);
 
   const updateInfo = async () => {
     getInfo().then(info => {
-      console.log(info);
       setInfo(info);
     }).catch(error => {
-      console.error("getStatus", { error });
-      setInfo({
-        name: "",
-        version: "",
-        uptime: 0,
-      });
+      console.error("getInfo", { error });
+      setInfo(DEFAULT_INFO);
     });
   };
 
@@ -30,8 +25,8 @@ function MarketData() {
   }, []);
 
   return (
-    <Widget title={info.name} version={info.version}>
-      <div className="info">
+    <Widget title={NAME} version={`F${VERSION}-B${info.version}`}>
+      <div className="content">
         <div>{info.uptime}</div>
       </div>
     </Widget>

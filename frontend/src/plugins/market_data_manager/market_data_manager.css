@@ -1,0 +1,68 @@
+.content {
+  background: #fff;
+}
+
+.instrument-row {
+  height: 100%;
+  padding: 2px 20px 2px 2px;
+  background: #fff;
+  border: #f00 solid 1px;
+  text-align: left;
+  box-sizing: content-box;
+  justify-content: space-between;
+  display: flex;
+}
+
+.instrument-row > .group {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.instrument-row > * > .id {
+  height: 100%;
+  margin-right: 5px;
+  padding: 0 5px;
+  color: #fff;
+}
+
+.instrument-row > * > .id.derivatives {
+  background: #58cb00;
+}
+.instrument-row > * > .id.equity-futures {
+  background: #00cb81;
+}
+.instrument-row > * > .id.commodity-futures {
+  background: #00c1cb;
+}
+.instrument-row > * > .id.cryptocurrency-futures {
+  background: #006ccb;
+}
+.instrument-row > * > .id.spot-forex {
+  background: #0007cb;
+}
+.instrument-row > * > .id.options-on-futures {
+  background: #cb00cb;
+}
+.instrument-row > * > .id.spot-metal {
+  background: #d4af37;
+}
+
+.instrument-row > * > button {
+  background: #555;
+  height: 100%;
+  width: 20px;
+  padding: 2px 0;
+  margin: 0;
+  border-radius: 0;
+  line-height: 100%;
+  box-sizing: content-box;
+}
+
+.instrument-row > * > button:hover {
+  background: #888;
+}
+
+.instrument-row > * > button:active {
+  background: #333;
+}

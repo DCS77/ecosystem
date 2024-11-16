@@ -19,7 +19,7 @@ function Connection() {
   useEffect(() => {
     const interval = setInterval(() => {
       updateState();
-    }, 500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [])

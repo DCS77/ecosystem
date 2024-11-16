@@ -28,6 +28,12 @@ find_package(GTest REQUIRED)
 target_link_libraries(test_api PRIVATE GTest::gtest_main)
 
 # Plugins
+## MarketDataManager
+add_library(market_data_manager SHARED backend/plugins/market_data_manager/market_data_manager.cpp)
+target_include_directories(market_data_manager PRIVATE backend)
+set_target_properties(market_data_manager PROPERTIES PREFIX "" OUTPUT_NAME "market_data_manager")
+target_link_libraries(market_data_manager PUBLIC Crow::Crow)
+
 ## MarketData
 add_library(market_data SHARED backend/plugins/market_data/market_data.cpp)
 target_include_directories(market_data PRIVATE backend)

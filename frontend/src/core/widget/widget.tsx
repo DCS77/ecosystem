@@ -10,7 +10,7 @@ function Widget(props: PropsWithChildren<WidgetProps>) {
   return (
     <div className="widget">
       <div className="handle">
-        {props.title} {props.version}
+        <b>{props.title}</b> {props.version}
       </div>
       <div className="plugin">
         {props.children}

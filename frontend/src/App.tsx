@@ -2,12 +2,14 @@ import GridLayout from "react-grid-layout";
 import MenuBar from './core/menu_bar/menu_bar';
 import Connection from './core/connection/connection';
 import MarketData from './plugins/market_data/market_data';
+import MarketDataManager from "./plugins/market_data_manager/market_data_manager";
 
 import './App.css';
 
 function App() {
   const layout = [
     { i: "connection", x: 0, y: 0, w: 10, h: 3, minW: 10, maxW: 10, minH: 3, maxH: 3, isResizable: false },
+    { i: "market-data-manager", x: 10, y: 0, w: 20, h: 30, minW: 10, maxW: 20, minH: 10, maxH: 30, isResizable: true },
     { i: "market-data", x: 0, y: 0, w: 10, h: 10, minW: 10, maxW: 20, minH: 10, maxH: 30, isResizable: true },
   ];
 
@@ -23,6 +25,8 @@ function App() {
         draggableHandle=".handle"
       >
         <div key="connection"><Connection /></div>
+
+        <div key="market-data-manager"><MarketDataManager /></div>
         <div key="market-data"><MarketData /></div>
       </GridLayout>
     </>
