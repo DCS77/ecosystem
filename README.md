@@ -1,6 +1,8 @@
-# Plugin Ecosystem
+# Ecosystem of Trading System Tools
 
-_Infrastructure for an ecosystem of plugins built using C++23, vcpkg, gtest and Docker for the backend, as well as React with TypeScript and Vite for the frontend._
+_An ecosystem of trading system tools built using C++23, CrowCpp, vcpkg, gtest and Docker for the backend, as well as React with TypeScript and Vite for the frontend._
+
+![Ecosystem UI](assets/Ecosystem%20UI.png "Ecosystem UI")
 
 ## Backend
 
@@ -56,6 +58,6 @@ npm run dev
 
 ## Future Work
 
-- Allow frontend to interact with backend through API.
-- Interfaces for UI plugins (frontend) and logic plugins (backend).
-- Specific implementations of these plugins to handle a task.
+- Generate simulated market data and save to a database.
+- Load and display latest market data.
+- Display live market data within the MarketData widgets.
