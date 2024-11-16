@@ -1,14 +1,19 @@
 import Widget from "../../core/widget/widget";
 import { getInfo } from "./backend";
-import { DEFAULT_INFO } from "../../core/info/info";
-import { useEffect, useState } from "react";
+import { Instrument } from "../../lib/instruments/instrument";
+import { DEFAULT_INFO } from "../../lib/info/info";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 import './market_data.css';
 
 const NAME: string = "MD";
 const VERSION: string = "0.1";
 
-function MarketData() {
+export interface MarketDataProps {
+  instrument: Instrument;
+}
+
+function MarketData(props: PropsWithChildren<MarketDataProps>) {
   const [info, setInfo] = useState(DEFAULT_INFO);
 
   const updateInfo = async () => {
@@ -25,7 +30,7 @@ function MarketData() {
   }, []);
 
   return (
-    <Widget title={NAME} version={`F${VERSION}-B${info.version}`}>
+    <Widget title={`${NAME}. ${props.instrument.id}`} version={`F${VERSION}-B${info.version}`}>
       <div className="content">
         <div>{info.uptime}</div>
       </div>

@@ -1,10 +1,11 @@
 import { PropsWithChildren } from 'react';
-import { getInstrumentTypeStyle, Instrument } from '../../core/instruments/instrument';
+import { getInstrumentTypeStyle, Instrument } from '../../lib/instruments/instrument';
 
 import './market_data_manager.css';
 
 export interface InstrumentRowProps {
   instrument: Instrument;
+  addMarketDataInstrument: (instrument: Instrument) => void;
 }
 
 function InstrumentRow(props: PropsWithChildren<InstrumentRowProps>) {
@@ -15,7 +16,7 @@ function InstrumentRow(props: PropsWithChildren<InstrumentRowProps>) {
         <span>{props.instrument.type}</span>
       </span>
       <span className="group">
-        <button>⊕</button>
+        <button onClick={() => props.addMarketDataInstrument(props.instrument)}>⊕</button>
       </span>
     </div>
   )

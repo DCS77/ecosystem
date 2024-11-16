@@ -1,5 +1,5 @@
-import { PluginInfo } from "../../core/info/info";
-import { Instruments } from "../../core/instruments/instrument";
+import { PluginInfo } from "../../lib/info/info";
+import { Instrument } from "../../lib/instruments/instrument";
 import { get } from "../../lib/backend";
 
 export async function getInfo() {
@@ -7,5 +7,5 @@ export async function getInfo() {
 }
 
 export async function getInstruments() {
-  return await get<Instruments>("plugin/marketdatamanager/instruments");
+  return await get<Instrument[]>("plugin/marketdatamanager/instruments");
 }
