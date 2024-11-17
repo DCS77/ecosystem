@@ -1,6 +1,6 @@
-# Ecosystem of Trading System Tools
+# Ecosystem: Trading System Tools
 
-_An ecosystem of trading system tools built using C++23, CrowCpp, vcpkg, gtest and Docker for the backend, as well as React with TypeScript and Vite for the frontend._
+_An series of trading system tools built using C++23, CrowCpp, vcpkg, gtest and Docker for the backend, as well as React with TypeScript and Vite for the frontend._
 
 ![Ecosystem UI](assets/Ecosystem%20UI.png "Ecosystem UI")
 
